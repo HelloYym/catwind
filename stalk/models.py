@@ -19,6 +19,19 @@ class Lolly(models.Model):
             setattr(self, k, '\001'.join(ori + now))
 
 
+class Job(Lolly):
+    job_id = models.CharField(max_length=40)
+    project = models.CharField(max_length=40, null=True)
+    spider = models.CharField(max_length=40, null=True)
+    start_time = models.DateTimeField(null=True)
+    end_time = models.DateTimeField(null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = 'job'
+        unique_together = ('job_id', 'project', 'spider')
+
+
 class QualityNews(Lolly):
     thread = models.IntegerField(null=False)
     category = models.CharField(max_length=50, null=False)

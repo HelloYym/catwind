@@ -33,7 +33,7 @@ class CqnSpider(scrapy.Spider):
     def parse_list(self, response):
         for info in response.xpath('//tr[@class="TableBody1"]'):
             href = info.xpath('.//div[@class="jsg1"]/a/@href').extract_first()
-            summary = info.xpath('string(.//div[@class="jsg2"])').extract_first()·
+            summary = info.xpath('string(.//div[@class="jsg2"])').extract_first()
 
             yield scrapy.Request(url=href,
                                  dont_filter=True,
