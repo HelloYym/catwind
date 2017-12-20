@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 from base.items import BaseItem
-from stalk.models import QualityNews
+from stems.models import QualityNews
 
 
 class QualityNewsItem(BaseItem):

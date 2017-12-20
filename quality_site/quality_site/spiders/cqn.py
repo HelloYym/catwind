@@ -7,7 +7,7 @@ from quality_site.itemloaders import NewsLoader
 class CqnSpider(scrapy.Spider):
     name = 'cqn'
 
-    pipeline = ['LocationPipeline', 'BaseUniqueItemPersistencePipeline']
+    pipeline = ['BaseUniqueItemPersistencePipeline']
 
     allowed_domains = ['http://www.cqn.com.cn']
     request_list_url = 'http://www.cqn.com.cn/search/servlet/SearchServlet.do?titleKey={keyword}&sort=word&op=adv&pageNo={page}'
