@@ -37,6 +37,6 @@ class QualityNews(Lolly):
     image_url = models.TextField(null=True)
 
     class Meta:
-        app_label = 'stalk'
+        app_label = 'stems'
         db_table = 'spider_quality_news'
         unique_together = ('thread', 'category')

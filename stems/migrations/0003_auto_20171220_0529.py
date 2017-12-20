@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('stalk', '0002_auto_20171220_0404'),
+        ('stems', '0002_auto_20171220_0404'),
     ]
 
     operations = [
