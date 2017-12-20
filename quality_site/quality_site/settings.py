@@ -12,7 +12,7 @@
 import sys, os, django
 
 sys.path.append('/Users/yangyuming/PycharmProjects/catwind')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_core.settings'
 django.setup()
 
 BOT_NAME = 'quality_site'
