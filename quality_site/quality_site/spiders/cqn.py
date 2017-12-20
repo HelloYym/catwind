@@ -6,12 +6,8 @@ from quality_site.itemloaders import NewsLoader
 
 class CqnSpider(scrapy.Spider):
     name = 'cqn'
-    # custom_settings = {
-    #     'ITEM_PIPELINES': {'quality_site.pipelines.AddressPipeline': 300,
-    #                        'base.pipelines.BaseUniqueItemPersistencePipeline': 700},
-    # }
 
-    pipeline = ['AddressPipeline', 'BaseUniqueItemPersistencePipeline']
+    pipeline = ['LocationPipeline', 'BaseUniqueItemPersistencePipeline']
 
     allowed_domains = ['http://www.cqn.com.cn']
     request_list_url = 'http://www.cqn.com.cn/search/servlet/SearchServlet.do?titleKey={keyword}&sort=word&op=adv&pageNo={page}'
@@ -39,7 +35,6 @@ class CqnSpider(scrapy.Spider):
                                  dont_filter=True,
                                  meta={'summary': summary},
                                  callback=self.parse_detail)
-            return
 
     def parse_detail(self, response):
 

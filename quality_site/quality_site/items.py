@@ -11,6 +11,6 @@ from stalk.models import QualityNews
 
 class QualityNewsItem(BaseItem):
     django_model = QualityNews
-    update_fields_list = ['source', 'link', 'title', 'address', 'created', 'author', 'view_cnt',
+    update_fields_list = ['source', 'link', 'title', 'location', 'created', 'author', 'view_cnt',
                           'summary', 'content', 'raw_content', 'image_url', 'keywords']
     unique_key = ('thread', 'category')

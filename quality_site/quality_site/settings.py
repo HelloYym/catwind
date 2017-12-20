@@ -70,7 +70,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'quality_site.pipelines.AddressPipeline': 300,
+    'quality_site.pipelines.LocationPipeline': 300,
     'base.pipelines.BaseUniqueItemPersistencePipeline': 700,
 }
 
