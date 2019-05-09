@@ -12,6 +12,8 @@
 import sys, os, django
 
 sys.path.append('/Users/yangyuming/PycharmProjects/catwind')
+sys.path.append('/home/quality/catwind')
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'django_core.settings'
 django.setup()
 
@@ -24,7 +26,7 @@ NEWSPIDER_MODULE = 'quality_site.spiders'
 # USER_AGENT = 'quality_site (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -70,9 +72,13 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    # 'scrapy.pipelines.files.FilesPipeline': 1,
     'quality_site.pipelines.LocationPipeline': 300,
     'base.pipelines.BaseUniqueItemPersistencePipeline': 700,
+    'quality_site.pipelines.DownloadFilePipeline': 1,
 }
+
+FILES_STORE = '~/check_report_files'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

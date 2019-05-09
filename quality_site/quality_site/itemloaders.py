@@ -6,7 +6,7 @@ from w3lib.html import remove_tags
 
 
 def get_trunk(content):
-    content = content.replace('\r', '').replace('\n', '').replace('\t', '').replace(' ', '').strip()
+    content = content.replace('\r', '').replace('\n', '').replace('\t', '').strip()
     if content != '': return content
 
 
@@ -22,9 +22,9 @@ class NewsLoader(ItemLoader):
     default_input_processor = MapCompose(get_trunk, remove_tags)
     default_output_processor = TakeFirst()
 
-    created_in = MapCompose(str.strip)
+    create_date_in = MapCompose(str.strip)
 
-    content_out = Join('')
+    content_out = Join('\n')
 
     raw_content_in = MapCompose(get_trunk)
     raw_content_out = Join('')
